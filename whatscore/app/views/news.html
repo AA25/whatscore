@@ -1,0 +1,27 @@
+</br><h4>Live updates brought to you by</h4> 
+
+<img id="SkySportsNews" src="./img/logos/sky.png" alt="skySportsLogo" /> 
+<button ng-click="refresh()" style="background:transparent; border:none;">
+            <i class="fa fa-refresh fa-2x"></i>
+</button>
+</br>
+
+<span ng-hide="isLoaded.message">
+    <i class ="fa fa-spinner fa-5x fa-spin"></i>
+</span>
+
+<ul class="pricing_table coolText" ng-show="isLoaded.message">
+     <li class="price_block" ng-repeat="new in news">
+        <div class="price skyBlock">
+            <div class="price_figure">
+                <span class="price_tenure">{{new.title}}</span>               
+            </div>
+        </div>
+        <a ng-href="{{new.link}}" target="_blank">
+            <ul class="features">
+                <li><img ng-src="{{new.imgsrc}}" alt="newsPic" height="150" width="200"/></li>
+                <li class="news">{{new.shortdesc}}</li>
+            </ul>
+        </a>
+    </li>   
+</ul>

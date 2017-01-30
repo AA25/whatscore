@@ -1,0 +1,56 @@
+<div class="coolText">
+	<div class="modal-header" ng-show="history.complete">
+		Between the BPL seasons of 2009/2010 and 2014/2015, </br>
+		<b class="roundBorder" style="background-color:#5cb85c">{{x.homeTeamName}}</b> and 
+		<b class="rounderBorder"style="background-color:#d9534f">{{x.awayTeamName}}</b> </br>
+		have played <u><b>'{{played}}'</b></u> times. </br>
+	</div>
+
+	<div class="modal-body" ng-show="history.complete">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Club</th>
+					<th>Won</th>
+					<th>Loss</th>
+					<th>Draw</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{x.homeTeamName}}</td>
+					<td>{{homeWin}}</td>
+					<td>{{homeLoss}}</td>
+					<td>{{draw}}</td>
+				</tr>
+				<tr>
+					<td>{{x.awayTeamName}}</td>
+					<td>{{awayWin}}</td>
+					<td>{{awayLoss}}</td>
+					<td>{{draw}}</td>
+				</tr>				
+			</tbody>	
+		</table></br>
+		  <div class="progress">
+			    <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{homePerC}}%">
+			      	{{homePerC}}%
+			    </div>
+			    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{drawPerC}}%">
+			      	{{drawPerC}}%
+			    </div>
+			    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{awayPerC}}%">
+			      	{{awayPerC}}%
+			    </div>
+		  </div>
+	</div>
+
+	<div class="modal-footer">
+		<p class="logoFooter">What score?</p>
+
+
+		<div class="footerPosition">
+			<button class="btn btn-primary" ng-click="getHistory(x.homeTeamName,x.awayTeamName)">History</button>
+		    <button class="btn btn-warning" ng-click="cancel()">Close</button>
+		</div>    
+	</div>
+</div>

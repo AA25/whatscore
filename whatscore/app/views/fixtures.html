@@ -1,0 +1,47 @@
+<img src="./img/logos/fixtureLogo.png" width="200" height="40"/> <br/>
+
+<span ng-hide="isLoaded.message">
+	<i class ="fa fa-spinner fa-5x fa-spin"></i>
+</span>
+
+<dir-pagination-controls boundary-links="true" template-url="./views/dirPagination.tpl.html" auto-hide="false"></dir-pagination-controls>
+
+<section class="fixtures coolText" ng-show="isLoaded.message">
+	<table class="table table-striped custab">
+		<thead>
+		  <tr>
+			  	<th class="hideMe">Match Day</th>
+			    <th style="text-align: right">Home</th>
+			    <th colspan="3">Result</th>				    
+			    <th>Away</th>		    
+			    <th class="hideMe">Date</th>
+			    <th class="noHis"></th>
+		  </tr>
+		</thead>  
+
+		<tbody>
+		  <tr dir-paginate="x in schedule | orderBy:'matchday' | itemsPerPage:10">
+
+			    <td class="hideMe">{{x.matchday}}</td>
+
+			    <td style="text-align: right">{{x.homeTeamName}}<img class="hideJersey" ng-src="{{x.homeJersey}}" alt="jersey"/></td>
+
+			    <td class="tdScore roundBorder" style="background-color:{{x.result.home}}">{{x.result.goalsHomeTeam}}</td>
+
+			    <td class="spacing">-</td>
+
+			    <td class="tdScore roundBorder" style="background-color:{{x.result.away}}">{{x.result.goalsAwayTeam}}</td>
+
+			    <td style="text-align: left"><img class="hideJersey" ng-src="{{x.awayJersey}}" alt="jersey"/>{{x.awayTeamName}}</td>
+
+			    <td class="hideMe">{{x.date}}</td>
+
+			    <td class="noHis" style="color:black;"><button class="histBtn roundBorder" ng-click="open(x)"><img src="./img/crests/swords.png" width="25" height="25"/></button></td>
+
+		  </tr>
+		</tbody>
+		<p class="logo">WhatScore?</p>
+	</table>
+</section>
+
+

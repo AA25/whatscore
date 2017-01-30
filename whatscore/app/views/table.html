@@ -1,0 +1,30 @@
+<img src="./img/logos/fixtureLogo.png" width="200" height="40"/> <br/> </br>
+
+<section class="roundBorder leagueTable coolText">
+	<table class="table table-hover">
+		<thead>
+		  <tr style="background-color:#354c8c">
+			  	<th>P</th>
+			  	<th>PTS</th>	
+			    <th>Club</th>
+			    <th class="hideMe">PLD</th>				    
+			    <th class="hideMe">GF</th>
+			    <th class="hideMe">GA</th>	
+			    <th class="hideMe">GD</th>	    
+		  </tr>
+		</thead>  
+
+		<tbody ng-repeat="x in returnTable">
+		  <tr>
+			    <td class="tdScore roundBorder" style="background-color:{{x.myColor}}">{{x.myPosition}}</td>
+			    <td>{{x.points}}</td>
+			    <td>{{x.teamName}}</td>
+			    <td class="hideMe">{{x.playedGames}}</td>
+			    <td class="hideMe">{{x.goals}}</td>
+			    <td class="hideMe">{{x.goalsAgainst}}</td>
+			    <td class="hideMe">{{x.goalDifference}}</td>
+		  </tr>
+		</tbody>
+		<p class="logo">WhatScore?</p>
+	</table>
+</section>

@@ -1,0 +1,117 @@
+<div class="coolText">	
+	<div class="modal-header">
+		
+		<div class="animate-show roundBorder" style="background-color:#d9534f; text-align:center;" ng-show="loError.meesage" ng-hide="!loError.message">
+			<p style="color:white; margin-bottom:-8px; margin-top:-8px;">
+				Username or password may be incorrect. </br> 
+				Please try again, or Register a new account.
+			</p> 
+		</div> 
+
+		<div class="animate-show roundBorder" style="background-color:#5cb85c; text-align:center;" ng-show="loSuccess.message" ng-hide="!loSuccess.message || loggedIn.message">
+			<p style="color:white; margin-bottom:-8px; margin-top:-8px;">
+				Login successful </br> 
+			</p> 
+		</div> 
+
+		<div class="animate-show roundBorder" style="background-color:#5cb85c; text-align:center;" ng-show="reSuccess.message" ng-hide="!reSuccess.message || loSuccess.message || loError.message">
+			<p style="color:white; margin-bottom:-8px; margin-top:-8px;">
+				Registeration successful, you can now log in. </br> 
+			</p> 
+		</div> 
+
+		<div class="animate-show roundBorder" style="background-color:#5cb85c; text-align:center;" ng-show="loggedIn.message" ng-hide="!loggedIn.message || loggedOut.message">
+			<p style="color:white; margin-bottom:-8px; margin-top:-8px;">
+				User is currently logged,  continue to log out.  </br> 
+			</p> 
+		</div>
+
+		<div class="animate-show roundBorder" style="background-color:#5cb85c; text-align:center;" ng-show="loggedOut.message" ng-hide="!loSuccess.message || loSuccess.message">
+			<p style="color:white; margin-bottom:-8px; margin-top:-8px;">
+				User has been logged out.  </br> 
+			</p> 
+		</div>
+
+	    <form style="padding-left:5%; padding-top:10px;" ng-hide="loSuccess.message">
+	    	Login with username and password. </br>
+	        <label>
+	          <span>Username</span>
+	          <input type="text" ng-model="loginUsername" class="form-control">
+	        </label>
+	        
+	        <label>
+	          <span>Password</span>
+	          <input type="password" ng-model="loginPassword" class="form-control">
+	        </label>
+	  	</form>
+	</div>
+
+	<div class="modal-body animate-show" ng-hide="loSuccess.message">
+		<div class="animate-show roundBorder" style="background-color:#d9534f; text-align:center;" ng-show="reError.message" ng-hide="!reError.message">
+			<p style="color:white;">Error occured, please try again</p>
+		</div> 		
+
+		<form class="animate-show" style="padding-left:5%;">
+			Register with your desired Username, Password and favourite club.</br>
+	        <div>
+	          <input type="text" ng-model="registerUsername" class="form-control loginForm" placeholder="Username">
+	        </div> 
+	        
+	        <!-- <label>
+	          <span style="color:black;">Password</span>
+	          <input type="password" ng-model="registerPassword" class="form-control">
+	        </label> -->
+	        <div ng-class="{'has-error': demoForm.registerPassword.$invalid && demoForm.registerPassword.$dirty,
+                                     'has-success': !demoForm.registerPassword.$invalid && demoForm.registerPassword.$dirty}">
+		    <input id="password"
+		           class="form-control loginForm"
+		           placeholder="Password"
+		           type="password"
+		           name="password"
+		           tr-trustpass="{maximum: true, special: false, messageGuide: 'Make sure your password meets these requirements:'}"
+		           ng-minlength="7"
+		           ng-maxlength="20"
+		           ng-model="registerPassword">
+		    </div>
+
+	          <span style="color:black;">Club</span>
+	          <select class="coolText" ng-model="registerClub" style="color:black;background-color:white">
+				  <option value="ARSENAL">ARSENAL</option>
+				  <option value="ASTON_VILLA ">ASTON VILLA </option>
+				  <option value="AFC_BOURNEMOUTH">AFC BOURNEMOUTH</option>
+				  <option value="CHELSEA">CHELSEA</option>
+				  <option value="CRYSTAL_PALACE">CRYSTAL PALACE</option>
+				  <option value="EVERTON">EVERTON</option>
+				  <option value="LEICESTER">LEICESTER </option>
+				  <option value="LIVERPOOL">LIVERPOOL</option>
+				  <option value="MANCHESTER_CITY">MANCHESTER CITY</option>
+				  <option value="MANCHESTER_UNITED">MANCHESTER UNITED</option>
+				  <option value="NEWCASTLE">NEWCASTLE</option>
+				  <option value="NORWICH">NORWICH</option>
+				  <option value="SOUTHAMPTON">SOUTHAMPTON</option>
+				  <option value="STOKE">STOKE</option>
+				  <option value="SUNDERLAND">SUNDERLAND</option>
+				  <option value="SWANSEA">SWANSEA</option>
+				  <option value="TOTTENHAM ">TOTTENHAM</option>
+				  <option value="WATFORD">WATFORD</option>
+				  <option value="WEST_BROM">WEST BROM</option>
+				  <option value="WEST_HAM ">WEST HAM</option>
+			  </select>
+	    </form>    
+	</div>
+
+	<div class="modal-footer">
+		<p class="logoFooter">What score?</p>
+
+		<div class="footerPosition">
+			<a href=""><button class="btn btn-primary" type="submit" ng-disabled="registerPassword.$invalid" ng-hide="loSuccess.message" ng-click="register()">Register</button></a>
+
+			<a href=""><button class="btn btn-primary" type="submit" ng-hide="loSuccess.message" ng-click="login()" >Login</button> </a>
+
+			<a href=""><button class="btn btn-primary" type="submit" ng-hide="loggedOut.message ||  hideLogout.message" ng-show="loggedIn.message" ng-click="logout();">Logout</button> </a>
+
+		    <a href=""><button class="btn btn-warning" ng-click="close()">Close</button></a>
+
+		</div>    
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<span ng-hide="isLoaded.message">
+    <i class ="fa fa-spinner fa-5x fa-spin"></i>
+</span>
+
+<ul class="pricing_table coolText" ng-show="isLoaded.message">
+     <li class="price_block" ng-repeat="person in player |orderBy:'name'">
+        <div class="price">
+            <div class="price_figure">            
+                <span class="price_number">{{person.name}}</span>
+            </div>
+        </div>
+        <ul class="features">
+            <div class="flagBackground" ng-style="{'background-image':'url({{person.img}})'}">
+                <li><img src="https://achvr-assets.global.ssl.fastly.net/assets/profile_placeholder_square150-dd15a533084a90a7e8711e90228fcf60.png" alt="team10" height="100" width="100"></li>
+            </div>    
+                <li style="font-size:10px;">{{person.position}}</li>            
+                <li>Birth: {{person.dateOfBirth}}</li>
+                <li>Value: {{person.marketValue}}</li>
+        </ul>
+    </li>   
+</ul>

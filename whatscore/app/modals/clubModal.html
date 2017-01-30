@@ -1,0 +1,28 @@
+<div class="coolText">
+	<div class="modal-header">
+	    <table class="clubmodalTable">
+	    	<tr>
+	    		<td><img ng-src="{{team.crestUrl}}" height="60" width="60"><img class="hideMe" src="http://cdn.staticneo.com/w/pes/thumb/7/7e/BarclaysPremierLeague.png/200px-BarclaysPremierLeague.png" height="60" width="60"/></td>
+	    		<td class="modalclubName"><h3>{{team.name}}</h3></td>
+	    	</tr>
+	    </table>
+	</div>
+
+	<div class="modal-body">
+		Squad Market Value: {{team.squadMarketValue}} </br>
+		Stadium name: {{team.stadiumName}} </br>
+		<img ng-src="{{team.stadiumImg}}" style="height:200px;width:100%"></img>
+	</div>
+
+	<div class="modal-footer">
+		<p class="logoFooter">What score?</p>
+		<div class="footerPosition">
+			<button class="btn btn-primary" ng-click="news()" href="#/specificNews">News</button>
+
+			<button class="btn btn-primary" ng-click="squad()" href="#/squads">Squad</button>
+
+		    <button class="btn btn-primary" ng-click="fixtures()" href="#/specfixtures">Fixtures</button>
+		    <button class="btn btn-warning" ng-click="cancel()">Close</button>
+		</div>    
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div style="padding-top:5px;" align="center">
+    <marquee class="roundBorder" direction="left" behavior="scroll" width="85%" bgcolor="#333" scrollamount="8" style="color:white">
+        Placeholder #Placeholder    |   
+    </marquee>
+</div>
+
+<span ng-hide="isLoaded.message">
+    <i class ="fa fa-spinner fa-5x fa-spin"></i>
+</span>
+
+<ul class="pricing_table coolText" ng-show="isLoaded.message">
+     <li class="price_block" ng-repeat="team in clubs |orderBy:'shortName'">
+        <div class="price" >
+            <div class="price_figure">
+                <span class="price_number"><img ng-src="{{team.jersey}}" alt="jersey"/></span>
+            </div>
+        </div>
+        <ul class="features hoverIMG">
+        <button class="btn_club_modal" ng-click="open(team)">
+            <li><img ng-src="{{team.crestUrl}}" alt="team10" height="100" width="100"/></li>
+        </button>
+        </ul>
+    </li>   
+</ul>

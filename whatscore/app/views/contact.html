@@ -1,0 +1,41 @@
+<!-- Contact Section -->
+<section id="contact" class="slide-aniamtion coolText">
+    <div class="">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Contact Me</h2>
+                <h3 class="section-subheading ">For all questions or issues, please fill in all fields </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="form-inline padding-10" role="form">
+                    <label for="Name">Name:</label> &nbsp;
+                    <input type="text" class="form-control" style="color:black;" ng-model="Name"> &nbsp;&nbsp;&nbsp;
+
+                    <label for="Email">Email:</label> &nbsp;
+                    <input type="text" class="form-control" style="color:black;" ng-model="Email"></br></br>
+
+                    <textarea class="form-control" placeholder="Your Message *" ng-model="Message"></textarea> 
+
+                        <div class="statusContainer"> </br>
+                            <div class="animate-show roundBorder statusBG" style="background-color:#d9534f;" ng-show="Error.message" ng-hide="!Error.message">
+                                <p>An error occured, please try again </br> <img class="statusSize" src="./img/status/cross.png"></img></p> 
+                            </div>
+                            <div class="animate-show roundBorder statusBG" style="background-color:#5cb85c;" ng-show="Process.message" ng-hide="!Process.message || Success.message">
+                                <p>Processing...</br><i class ="fa fa-spinner fa-5x fa-spin"></i></p></br>
+                            </div>
+                            <div class="animate-show roundBorder statusBG" style="background-color:#5cb85c;" ng-show="Success.message" ng-show="Success.message">
+                                <p>Email sent, </br> I'll be in touch as soon as possible.</br><img class="statusSize" src="./img/status/tick.png" ></img></p> </br>
+                            </div>
+                        </div>
+
+                    <hr class="intro-divider">
+                    <button type="button" class="btn btn-primary" style="padding-left:10;padding-right:10;" ng-click="submit(Name,Email,Message)">SUBMIT
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
