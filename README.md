@@ -1,6 +1,6 @@
 ��# whatscore
 
-The purpose of this project was to reinforce and build upon the knowledge I have learned within the last 3 months about AngularJS and Javascript. While also creating something that I was interested in and that can be used by others, Football. 
+The purpose of this project was to reinforce and build upon the knowledge I have learned within the last 3 months (June-August 2016) about AngularJS and Javascript. While also creating something that I was interested in and that can be used by others, Football. 
 
 This project involves use the of; multiple API's, $http post/get requests on client/server side, JSON, caching, Node.js, SMTP, localStorage, bootstraping, responsiveness, SAP and much more.
 
