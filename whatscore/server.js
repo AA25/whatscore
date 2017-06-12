@@ -16,8 +16,8 @@ var data;
 var transporter = nodemailer.createTransport({
     service: 'Mailgun',
     auth: {
-        user: 'postmaster@sandbox48bb4a05facb4c6b94f74a782467f8a8.mailgun.org',
-        pass: 'a1da5f034da62091a221cd2a66eb9768'
+        user: '',
+        pass: ''
     }
 });
 
